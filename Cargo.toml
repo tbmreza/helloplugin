@@ -1,0 +1,22 @@
+[package]
+name = "helloplugin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+llvm-plugin = { version = "0.3.0", features = ["llvm14-0"] }
+
+[lib]
+crate-type = ["cdylib"]
+
+[[example]]
+name = "hello_world"
+crate-type = ["cdylib"]
+path = "examples/hello_world.rs"
+
+[[example]]
+name = "opcode_counter"
+crate-type = ["cdylib"]
+path = "examples/opcode_counter.rs"
